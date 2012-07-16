@@ -3,22 +3,22 @@ from os.path import exists
 
 script, from_file, to_file = argv
 
-print "Copying from %s to %s" % (from_file, to_file)
+print "Copiando de %s a %s" % (from_file, to_file)
 
 input = open(from_file)
 indata = input.read()
 
-print "The input file is %d bytes long" % len(indata)
+print "El archivo original tiene %d bytes" % len(indata)
 
-print "Does the output file exist? %r" % exists(to_file)
-print "ready, hit ENTER to continue, CTRL-C to abort."
+print "¿Existe el archivo de destino? %r" % exists(to_file)
+print "Favor presionar a ENTER para continuar...."
 raw_input('>')
 
 output = open(to_file, 'w')
 output.truncate()
 output.write(indata)
 
-print "Alright, all done."
+print "Listo."
 
 output.close()
 input.close()
